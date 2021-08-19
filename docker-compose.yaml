@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  reverse_proxy:
+    image: nginx:1.17.10
+    container_name: reverse_proxy
+    hostname: reverse_proxy
+    image: nginx
+    depends_on:
+      - flask-app
+    ports:
+      - 80:80
+    volumes:
+      - ./reverse_proxy/nginx.conf:/etc/nginx/nginx.conf
+    
+  flask-app:
+    image: flask-app
+    container_name: flask-app
+    build:
+      context: ./flask-app
+    ports:
+      - 8080:80
+    restart: on-failure
