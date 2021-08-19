@@ -7,3 +7,7 @@ Intructions on how to run:
 
 Webpage is available at localhost:80
 
+
+Resources
+https://www.youtube.com/watch?v=hxngRDmHTM0
+https://github.com/docker/labs/blob/master/beginner/chapters/setup.md 
